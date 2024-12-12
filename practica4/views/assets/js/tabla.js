@@ -1,5 +1,5 @@
-const listaralquileres = () => {
-    tabla = $('#listadoAlquileres').dataTable({
+$(() => {
+    tabla = $('#listadoAlquileres').DataTable({
         aProcessing: true,
         aServerSide: true,
         dom: 'Bfrtip',
@@ -7,16 +7,20 @@ const listaralquileres = () => {
         ajax: {
             url: '../controllers/controller.php?op=pintarTabla',
             type: 'GET',
+            data: {},
             dataType: 'json',
-            error: (e) => {
-                console.log(e.responseText)
-            },
+            contentType: false,
+            processData: false,
+            success: ((alquileres) => {
+                console.log(alquileres)
+            })
+        },
+        columns: [
+            {alquileres: 'Nombre'},
+            {alquileres: 'Veces'},
+            {alquileres: '# Alquiler'}
+        ],
             bDestroy: true,
             iDisplayLength: 5
-        }
     })
-}
-
-$(() => {
-    listaralquileres()
 })

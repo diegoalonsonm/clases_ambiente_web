@@ -10,14 +10,14 @@ switch ($_GET["op"]) {
         break;
 
     case 'pintarTabla':
-        $datos = Modelo::mostrarTabla();
+        $alquileres = Modelo::mostrarTabla();
         $data = array();
 
-        foreach ($datos as $dato) {
+        foreach ($alquileres as $alquiler) {
             $data[] = array(
-                "0" => $dato->nombre,
-                "1" => $dato->alquiler_id,
-                "2" => $dato->veces
+                "Nombre" => $alquiler['nombre'],
+                "# Alquiler" => $alquiler['alquiler_id'],
+                "Veces" => $alquiler['veces']
             );
         }
         $resultados = array(

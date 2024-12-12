@@ -247,8 +247,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <table id="listadoAlquileres" class="table table-striped table-bordered table-hover">
                       <thead>
                         <th>Nombre</th>
-                        <th># alquiler</th>
-                        <th># Veces</th>
+                        <th># Alquiler</th>
+                        <th>Veces</th>
                       </thead>
                       <tbody></tbody>
                   </table>
